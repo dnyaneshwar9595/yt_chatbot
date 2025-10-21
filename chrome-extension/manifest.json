@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "AI Video Assistant Launcher",
+  "version": "1.0",
+  "description": "Open the AI Video Assistant streamlit app for the current YouTube video",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Open AI Video Assistant"
+  }
+}
