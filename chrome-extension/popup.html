@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Open AI Video Assistant</title>
+  </head>
+  <body>
+    <h3>Open AI Video Assistant</h3>
+    <input id="url" placeholder="YouTube URL or ID" style="width:100%"/>
+    <button id="open">Open</button>
+
+    <script>
+      document.getElementById("open").addEventListener("click", () => {
+        const val = document.getElementById("url").value.trim();
+        if (!val) return alert("Enter URL or ID");
+        // basic transform: just send as query param
+        const url = `http://localhost:8501/?video=${encodeURIComponent(val)}`;
+        window.open(url, "_blank");
+      });
+
+      // optional: auto-fill with current tab url
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        const taburl = tabs[0].url || "";
+        document.getElementById("url").value = taburl;
+      });
+    </script>
+  </body>
+</html>

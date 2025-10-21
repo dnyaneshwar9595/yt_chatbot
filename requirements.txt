@@ -1,0 +1,8 @@
+streamlit>=1.24
+youtube-transcript-api>=0.6.0
+openai>=0.27.0
+langchain>=0.0.250
+faiss-cpu>=1.7.4
+tqdm
+pydantic
+python-dotenv
