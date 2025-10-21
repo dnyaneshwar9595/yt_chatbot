@@ -2,7 +2,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 from openai import OpenAI
 from helpers import get_youtube_id, fetch_transcript
-
+from dotenv import load_dotenv
+load_dotenv()
 # --- LLM setup ---
 client = OpenAI()  # uses OPENAI_API_KEY from env
 
